@@ -1,0 +1,16 @@
+{
+  "name": "Loja de Cupcakes",
+  "short_name": "Cupcakes",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fdf3e6",
+  "theme_color": "#d2691e",
+  "description": "Aplicativo de loja de cupcakes gourmet",
+  "icons": [
+    {
+      "src": "cupcake-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

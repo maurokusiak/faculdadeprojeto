@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Cupcakes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <header>
+    <h1>Loja de Cupcakes Gourmet</h1>
+    <nav>
+      <ul>
+        <li><a href="#vitrine">Vitrine</a></li>
+        <li><a href="#carrinho">Carrinho</a></li>
+        <li><a href="#checkout">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Área de Notificação -->
+  <div id="notificacao" class="notificacao"></div>
+
+  <section id="vitrine" class="vitrine">
+    <h2>Vitrine de Cupcakes</h2>
+    <div class="filtros">
+      <button onclick="filtrarCategoria('chocolate')">Chocolate</button>
+      <button onclick="filtrarCategoria('frutas')">Frutas</button>
+      <button onclick="filtrarCategoria('baunilha')">Baunilha</button>
+      <button onclick="filtrarCategoria('todos')">Todos</button>
+    </div>
+    <div class="cupcakes-list">
+      <!-- Lista de cupcakes será gerada aqui pelo JavaScript -->
+    </div>
+  </section>
+
+  <aside id="carrinho" class="carrinho">
+    <h3>Seu Carrinho</h3>
+    <ul id="carrinho-lista">
+      <!-- Itens do carrinho aparecerão aqui -->
+    </ul>
+    <button id="checkout-btn">Finalizar Pedido</button>
+  </aside>
+
+  <aside id="entrega" class="entrega">
+    <h3>Escolha o Método de Entrega</h3>
+    <label>
+      <input type="radio" name="metodoEntrega" value="padrao" checked onclick="atualizarMetodoEntrega()"> Entrega Padrão
+      (Gratuita)
+    </label>
+    <label>
+      <input type="radio" name="metodoEntrega" value="expressa" onclick="atualizarMetodoEntrega()"> Entrega Expressa (R$
+      10,00)
+    </label>
+    <div id="agendamento">
+      <h4>Agendar Entrega</h4>
+      <label for="dataEntrega">Data: </label>
+      <input type="date" id="dataEntrega">
+      <label for="horarioEntrega">Horário: </label>
+      <input type="time" id="horarioEntrega">
+    </div>
+    <button onclick="confirmarEntrega()">Confirmar Entrega</button>
+  </aside>
+
+  <aside id="pagamento" class="pagamento">
+    <h3>Escolha o Método de Pagamento</h3>
+    <label>
+      <input type="radio" name="metodoPagamento" value="cartao" checked> Cartão de Crédito
+    </label>
+    <label>
+      <input type="radio" name="metodoPagamento" value="paypal"> PayPal
+    </label>
+    <button onclick="confirmarPagamento()">Confirmar Pagamento</button>
+  </aside>
+
+  <section id="historicoPedidos" class="historico">
+    <h3>Histórico de Pedidos</h3>
+    <div id="listaPedidos">
+      <!-- Lista de pedidos será gerada aqui pelo JavaScript -->
+    </div>
+  </section>
+
+  <!-- Modal de Avaliação -->
+  <div id="modalAvaliacao" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h3>Avaliar Cupcake</h3>
+      <p id="cupcakeAvaliado"></p>
+      <label for="nota">Nota (1 a 5):</label>
+      <input type="number" id="nota" min="1" max="5">
+      <label for="comentario">Comentário:</label>
+      <textarea id="comentario" rows="3"></textarea>
+      <button onclick="salvarAvaliacao()">Salvar Avaliação</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
